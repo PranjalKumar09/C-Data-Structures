@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/*
+    For problems like finding elements that appear more than ⌊n/3⌋ times, instead of using a hash map, we can solve it with just four variables: two for storing the potential elements and two for their respective counts
+
+*/
+
 int bruteforce(vector<int> &arr){
     for(int i=0;i<arr.size();i++){
         int count = 1;
@@ -49,7 +54,7 @@ int moore_voting_algorithm(vector<int> arr){
 int main(){
     cout << endl;
     
-    vector <int> arr = {3,2,3};
+    vector <int> arr = {3,2,3 , 3, 1, 1, 1,2, 4,5,3};
     cout << bruteforce(arr) << endl;
     cout << hashing(arr) << endl;
     cout << moore_voting_algorithm(arr) << endl;
