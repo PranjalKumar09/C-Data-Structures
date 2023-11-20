@@ -84,40 +84,39 @@ Node* partition( Node* head,  Node* end,
 } 
   
 // here the sorting happens exclusive of the end node 
- Node* quickSortRecur( Node* head, 
-                             Node* end) 
+Node* quickSortRecur( Node* head,  Node* end) 
 { 
     // base condition 
     if (!head || head == end) 
         return head; 
-  
+
     Node *newHead = NULL, *newEnd = NULL; 
-  
+
     // Partition the list, newHead and newEnd will be 
     // updated by the partition function 
     Node* pivot  = partition(head, end, &newHead, &newEnd); 
-  
+
     // If pivot is the smallest element - no need to recur 
     // for the left part. 
     if (newHead != pivot) { 
         // Set the node before the pivot node as NULL 
-         Node* tmp = newHead; 
+        Node* tmp = newHead; 
         while (tmp->next != pivot) 
             tmp = tmp->next; 
         tmp->next = NULL; 
-  
+
         // Recur for the list before pivot 
         newHead = quickSortRecur(newHead, tmp); 
-  
+
         // Change next of last node of the left half to 
         // pivot 
         tmp = getTail(newHead); 
         tmp->next = pivot; 
     } 
-  
+
     // Recur for the list after the pivot element 
     pivot->next = quickSortRecur(pivot->next, newEnd); 
-  
+
     return newHead; 
 } 
 
