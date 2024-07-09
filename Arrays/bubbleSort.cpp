@@ -12,7 +12,6 @@ void display(vector<int> &arr){
     cout << arr[size-1] << " }";
 }
 
-
 void BubbleSort_Recursive(vector<int> &Array, int num){// num here is size of array
     if (num < 0) return;
     bool did_swap = false;
@@ -39,7 +38,7 @@ int main(){
     
     vector<int>  array = {4,3,2,1};
     display(array);
-    // BubbleSort(array); //Reommended to use that recursive function
+    BubbleSort(array); //Reommended to use that recursive function
     // BubbleSort_Recursive(array , array.size()); //Both works here 
     display(array);
     cout << endl;
