@@ -1,0 +1,33 @@
+2d array -> simplest form of multi-dimensional array 
+visualized as arrays of array
+arr[][]
+first bracket => row & second bracket -> column
+
+Example of 2d array with multi-dimensional array
+
+int arr[4][5]
+for(int i = 0; i < 4; i++){
+    for (int j = 0 ; j < 5 ; j++){
+        cin >> arr [i][j];
+        }}
+
+vector<vector<int >> arr is also type of two arrays
+
+taking input column wise 
+for (int j = 0; j < 5; j++){
+    for (int i = 0; i < 4 ;  i++){
+        cin >> arr [i][j];
+    }
+}
+
+int  arr[2][3] = (1,2,3,4,5,6);
+it is equal to => {{1,2,3}, {4,5,6} }
+
+
+
+
+
+when passing wo dimensional array must specify no of columns (arr[][n]) so compiler can pre calculate memory address of indicidual elelments 
+
+
+
