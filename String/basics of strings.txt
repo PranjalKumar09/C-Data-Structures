@@ -1,0 +1,60 @@
+String in c++ : 1 dimensional chare arrays
+Last null character used as terminator to know where string end * Space * Tab * newline character * null
+
+cin >>  name ;
+love 
+
+inside working of will like  l | o | v | e | #
+
+int get length => for .. name[i] != '\o' 
+                                count++;
+
+Palindrome : reverse of str = original str if str[s] != str[e] return 0
+else s++ e--
+
+
+word1 = "hello"
+cout << word1.length() // 5
+
+
+word2 = "hello abc"
+cout << word2.length() // 5
+
+// size of word2 will 5
+
+
+UC to LC => ch - 'A' + 'a' [if "A" <= ch <= "Z"]
+LC to UC => ch - 'a' + 'A  [if "a" <= ch <= "z"]
+
+
+string sgetline methods:
+
+
+
+char word[50];
+cin.getline(word, 50); // deafult delimter is \n or \o
+
+
+
+
+arrays => sequential collection of similar data types
+String => sequece of characters represent as single data type
+
+arrays => element stored continusely in increasing memory location
+string => string stored in any manner in any memory location str 
+
+arrays => special variable that hold more than one value at time
+string => string only hod data type 
+
+arrays => mutable size fixed
+string => immutable size not fixed ( unmodified)
+
+char a[10] = "pksa"  | char *p = "pksa" 
+Array                | pointer variable
+Size = 10 byte       | 4 but expandable 
+a & &a same          | different
+allocated at a       | 
+complier time        | runtime
+a++ invalid          | valid
+deafult delimter is  |
+            | 
