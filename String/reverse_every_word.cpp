@@ -36,7 +36,7 @@ int main(){
     getline(cin , word); cout << endl;
 
 
-    palindrome_every_word(word);
+    reverse_every_word(word);
 
     
     cout  << word << endl;
