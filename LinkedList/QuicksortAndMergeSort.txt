@@ -1,0 +1,20 @@
+Q-> Why QuickSort preferred for arrays & MergeSort for LL?
+
+
+Ans->
+=====
+
+QuickSort preferred for arrays 
+    * Quick Sort in its general form is an in-place sort (i.e. it does'nt) require any extra storage, wheras merge sort requires O(N) extea storage, allocating * de-allocating the extra space used for merge sort increases the running time of algorithm
+    * Avg TC of both => O(N log N)
+    But for arrays merge sort loses due to use of extra O(N) storage
+    * Quick Sort use randomized version. Although the worst case is possible in the randomized version, it does not occur for a specific pattern (such as a sorted array). Hence the randomized quick sort works well in practice.
+    * Quick Sort is also a cache friendly sorting algorithm has good locality of reference 
+    * Quick Sort is also tail resoursive therefore tail call optimizations is done
+
+MergeSort for LL
+    * Unlike arrays, LL nodes may not be  adjacent in memory
+    * Unlike array we can insert items in middle in O(1) TC if given reference to previous node. Therefore merge merge operation complexity of merge sort
+    * We can do random access in continous in memory . We can do random access in continous in memory . We can't do it LL like arrays
+    * In merge sort randome access is low 
+
