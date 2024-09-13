@@ -1,0 +1,24 @@
+ARTHMETIC EXPRESSION EVALUATION 
+
+    Expression usually represented as Infix notation. The order of operation & operands in an arhmetic expression does'nt uniquely determine the order in wich operation are to performed
+
+
+    1. Polish Notation (Prefix Notation)
+        : operator -> operand -> operand2
+        It refers to notation in which operator is placed before its two operands. No parethesis required 
+        +AB
+
+    2. Reverse Notation (Postfix Notation) operand -> operand2 -> operator
+        Analogous notation in wihc the operator is placed after its two operands . Again, no parethesis required in reverse polish notation 
+        AB+    
+
+    
+
+    Precedence => Highest : Exponentiation 
+                  Medium  : Multiplication & Division
+                  Lowest  : Addition & Subtraction
+
+
+    Infix -> (2*4) * (4*6)
+    Postfix -> 24+46+*
+    
