@@ -1,0 +1,118 @@
+
+
+Data Structure
+
+    A data structure is a systematic arrangement of data, which enables efficient access and modification. It organizes data in a way that suits specific operations and tasks.
+    Usage in Memory: Data structures are used to manage and organize data in computer memory (RAM). For instance, if you have a 4 GB RAM and need to store a large file or movie, efficient data structures help in managing the data effectively.
+    Examples: Arrays, linked lists, stacks, queues, trees, and graphs.
+
+Data Type
+
+    Definition: A data type defines the type of value that can be stored in a variable and determines the operations that can be performed on it. It specifies the kind of data a variable can hold.
+    Common Data Types:
+        Primitive Types: int, float, char, double, etc.
+        Derived Types: Arrays, pointers, structures, unions.
+        Abstract Data Types (ADTs): Lists, stacks, queues, trees, graphs.
+
+    See image: DSA/Primitive_Non_Primitive.png
+
+
+Variable Types
+
+    Static Variable: A variable that retains its value between function calls and is initialized only once. It is allocated in the data segment of memory.
+    Global Variable: A variable that is declared outside of any function and is accessible from any function within the same file or across files (if declared as extern).
+    Local Variable: A variable that is declared inside a function or block and is accessible only within that function or block. It is created and destroyed with each function call.
+
+Character Data Type
+
+    Size and Representation:
+        A char is typically represented using 1 byte (8 bits) in memory.
+        Bit Representation: With 8 bits, you can represent 28=25628=256 different values. This allows for 256 possible characters in the ASCII character set.
+        ASCII Values: ASCII (American Standard Code for Information Interchange) uses 7 bits to represent 128 characters, but 8 bits are often used to accommodate additional characters or extended sets.
+
+Struc Vs union ---
+=======================
+
+Struct (Structure)
+
+    Definition: A struct is a composite data type that groups together variables (members) under a single name. Each member in a struct has its own memory location.
+    Memory Allocation: Each member of a struct has its own memory space, and the total size of the struct is the sum of the sizes of its members (plus possible padding).
+    Access: All members of a struct are accessible simultaneously. You can store different types of data in the members of a struct.
+    Usage: Use struct when you need to model a collection of different attributes that together describe an entity.
+
+Examples:
+    struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+
+
+
+Union
+
+    Definition: A union is a composite data type where all members share the same memory location. Only one member can hold a value at any given time.
+    Memory Allocation: All members of a union use the same memory space, and the size of the union is the size of its largest member.
+    Access: Only one member of a union can be accessed or modified at a time. Changing the value of one member will affect the values of all other members.
+    Usage: Use union when you need to store different types of data in the same memory location but not simultaneously. It's useful for saving memory when only one data member is needed at a time.
+
+
+
+Example
+    union Data {
+    int integer;
+    float floating_point;
+    char character;
+};
+
+
+1. Memory Consumption
+
+    Struct: Each member has its own allocated memory space. The total size is the sum of the sizes of all members, plus any padding added for alignment.
+    Union: All members share the same memory space. The total size is determined by the size of the largest member.
+
+2. Data Storage
+
+    Struct: You can store and access all members simultaneously. Each member retains its value independently of the others.
+    Union: Only one member can store a value at a time. Writing to one member will overwrite the value of the other members.
+
+3. Initialization
+
+    Struct: You can initialize all members at once.
+    Union: You can only initialize the first member, as initializing one member affects the entire union.
+
+4. Access
+
+    Struct: All members are accessible at any time. Each member can be read or modified without affecting others.
+    Union: Only the most recently written member can be accessed. Accessing other members may yield unexpected results or garbage values.
+
+5. Use Cases
+
+    Struct: Ideal for grouping related data where each member needs to be accessed and used independently. Useful for modeling complex entities.
+    Union: Ideal for scenarios where different types of data are stored in the same memory location but only one type is needed at a time. Useful for memory-efficient data storage when the type of data varies.
+
+
+6. Padding and Alignment
+
+    Struct: Padding may be added to align members according to their types, which may increase the total size.
+    Union: No additional padding is added beyond the size of the largest member, so it uses memory more efficiently in terms of total size.
+
+
+7. Member Access
+
+    Struct: Members are accessed using the dot operator (.) and the arrow operator (-> for pointers).
+    Union: Members are also accessed using the dot operator (.) and the arrow operator (->), but only the last written member holds meaningful data.
+
+
+
+Array
+=====
+    Advantage
+        1: Random Memory Access (Accessing any object by mentioning index)
+        2: Conjugate
+        3: Homogenous
+    Disadvantage
+        1: If not ordered then have to access all data linearly (for ordering)
+        2: Wastage of memory (if not used all element)
+        3: Dyanmic array is not possible
+        4: Insertion at middle (Time Consuming)
