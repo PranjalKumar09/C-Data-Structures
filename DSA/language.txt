@@ -1,0 +1,147 @@
+By C we can make system software
+
+Moving to c++ it solve real world problems & more secured
+
+Java is Platform independent applications
+        
+
+Platform
+    It is an environment in which program runs
+    Combination of OS & Processor
+
+    Machine is individual
+
+    x person have y relgion
+    x > y
+    Example ->  All person have y Platform
+                & all person have x machines
+
+In the code snippet int arr[5]; arr[5] = 12;, you're trying to assign a value to arr[5]. However, this is actually out of bounds since array indices in C/C++ are 0-based, meaning a 5-element array has valid indices from 0 to 4.
+Why no error?
+
+    No compile-time error: C/C++ does not perform bounds checking during compilation, so the compiler assumes that you, as the programmer, will access the array correctly.
+    No runtime error (in some cases): At runtime, accessing arr[5] is undefined behavior. This means the program may appear to run without errors, but it could cause memory corruption or unpredictable behavior. Depending on the system and the program's layout in memory, you might not see an immediate issue, but it's still incorrect.
+
+In short, there's no error because C/C++ allows direct memory access, even if it's unsafe. However, this will lead to undefined behavior. To avoid this, always ensure you're accessing within the valid bounds of an array.
+
+
+    =>  But java provides the Automatic Memory Management, java provide gc() it checks any dyanmic release. gc() it will  Automatically runs.
+
+    =>  Java is secure don't use pointers explicitly
+
+
+    int a ;
+    int *p;
+    p = &a;
+
+  Reference doesn't have seprate variable, while pointer does, java runs all program in sandbox,
+
+  * Java is robust in Error excdption management
+  * Java is inherited from C/C++
+
+  Multithreading-> Multithreading occur withing single application, in mutliple applications it is multiproccessing
+
+
+  In python there is RMI by which object of same application between two different machines
+
+  Java is distributed means, any modules can loaded with internet connection
+
+  
+  History
+  =======
+
+  Developed by-> James Gosling in 1996, 1st version name OAK because thery developing behind OAK tree
+  .
+
+
+  JVM does interpreter & Garbage collection
+
+
+
+  JRE is Java Runtime Environment
+
+  JDK = JRE + x
+  JRE = JVM + y
+
+  JDK is used to compile ,debug , execute, java program
+  JRE is used to provide Platform to run program
+
+  JVM perform -> Execution of program
+              -> Memory providing
+
+
+
+    Out in java is object Reference (not object) .
+
+
+
+    Java support UNICODE (large no of international languages ), C only support ASCII code so in java char size is 2 bytes but C it is 1 byte
+
+
+
+
+    Converting data type to object
+
+    data type method
+
+
+
+    exception occur if string not containing  digits in parse int
+
+
+    
+    
+
+
+    Scanner class to get input
+
+
+    Ending control loop, & exit control loop
+    
+
+
+
+
+
+
+
+    Demo D; // now it object Reference , no memory created
+    D = new Demo(---);  // this is new object
+
+
+
+    ,, 
+
+
+    
+    static in java accessed as -> Class_name.static_var\
+
+
+    declarwatoion of array in java
+
+    Static methods-> 
+        Method be made static ->
+            Only accessing static data of Class_name
+            Accessing its argumne
+            Factory--
+
+
+    Factory methods
+        To check anything before making objects
+
+    class Test{
+        public static void main(Stirng[] arge){
+            Student s1;
+            s1 = Student.createStudent(1,"Name1");
+        }
+    }
+
+    static block>
+
+
+
+    
+
+
+    explicitly intiliaztion,
+        
