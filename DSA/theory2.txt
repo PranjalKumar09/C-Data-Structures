@@ -1,0 +1,41 @@
+A C++ program is composed of tokens which are the smallest individual unit. Tokens can be one of several things, including keywords, identifiers, constants, operators, or punctuation marks.
+
+There are 6 types of tokens in c++:
+
+    Keyword
+    Identifiers
+    Constants
+    Strings
+    Special symbols
+    Operators
+
+
+1. Keywords:
+
+In C++, keywords are reserved words that have a specific meaning in the language and cannot be used as identifiers
+
+There are  95 keywords
+
+2. Identifiers
+
+In C++, an identifier is a name given to a variable, function, or another object in the code. Identifiers are used to refer to these entities in the program, and they can consist of letters, digits, and underscores. However, some rules must be followed when choosing an identifier:
+
+    The first character must be a letter or an underscore.
+    Identifiers cannot be the same as a keyword.
+    Identifiers cannot contain any spaces or special characters except for the underscore.
+    Identifiers are case-sensitive, meaning that a variable named "myVariable" is different from a variable named "myvariable".
+
+Why Transform?
+
+    Efficiency: Computers can evaluate expressions more quickly without worrying about operator precedence or parentheses.
+    Parsing Ease: Prefix and postfix formats can be processed using simple algorithms (like stack-based methods) that are easier to implement.
+    Avoiding Ambiguity: These formats provide a clear structure, reducing potential errors in expression evaluation.
+
+
+
+Tower of Hanoi-> Moves = 2^n - 1
+
+
+Non Linear DAta members-> Cant access the all data values in one way i.e. linearly
+
+
