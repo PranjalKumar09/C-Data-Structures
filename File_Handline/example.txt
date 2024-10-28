@@ -1,0 +1,3 @@
+This is the first line in the file.
+File handling in C++ is simple.
+This line is appended to the file.
