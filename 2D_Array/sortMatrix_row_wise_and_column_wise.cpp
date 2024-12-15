@@ -35,20 +35,22 @@ void display(vector<vector<int>> &arr){
 void sort_matrix_row_and_column_wise(vector <vector<int>> &matrix){
     for (int i = 0; i < matrix.size(); i++)
     sort(matrix[i].begin(), matrix[i].end());
-  
+
+
+    
     for (int i = 0; i < matrix.size(); i++){
         for (int j = i+1 ; j < matrix.size() ; j++)
             swap(matrix[i][j] , matrix[j][i]);
     }
 
-    for (int i = 0; i < matrix.size(); i++)
+    for (int i = 0; i < matrix.siz  e(); i++)
     sort(matrix[i].begin(), matrix[i].end());
 
-  
+
     for (int i = 0; i < matrix.size(); i++){
         for (int j = i+1 ; j < matrix.size() ; j++)
             swap(matrix[i][j] , matrix[j][i]);
-    }
+    }    
 }
 int main(){
     cout << endl;
