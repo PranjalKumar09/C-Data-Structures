@@ -21,12 +21,58 @@ void merge(vector<int>& arr, int low, int high, int mid) {
     for (int i = low; i <= high; i++) arr[i] = temp[i - low];
 }
 
+
+
 void mergesort(vector<int>& arr, int low, int high) {
     if (low >= high) return;
     int mid = (low + high) / 2;
     mergesort(arr, low, mid);
     mergesort(arr, mid + 1, high);
     merge(arr, low, high, mid);
+}
+
+void mergeArrays(vector<int> &a, vector<int> &b)
+{
+
+    /*
+    This is very Hard level algo, in this we merge without using extra space
+    */
+    int n = a.size(), m = b.size();
+    int gap = ceil((n + m) / 2.0);
+
+    while (gap > 0)
+    {
+        int i = 0, j = gap;
+
+        // Compare elements in the combined array view
+        while (j < (n + m))
+        {
+            int val1 = (i < n) ? a[i] : b[i - n];
+            int val2 = (j < n) ? a[j] : b[j - n];
+
+            // Swap if out of order
+            if (val1 > val2)
+            {
+                if (i < n && j < n)
+                {
+                    swap(a[i], a[j]); // Both in `a[]`
+                }
+                else if (i < n)
+                {
+                    swap(a[i], b[j - n]); // `a[]` and `b[]`
+                }
+                else
+                {
+                    swap(b[i - n], b[j - n]); // Both in `b[]`
+                }
+            }
+            i++;
+            j++;
+        }
+
+        // Reduce the gap
+        gap = (gap == 1) ? 0 : ceil(gap / 2.0);
+    }
 }
 
 void display(const vector<int>& arr) {
