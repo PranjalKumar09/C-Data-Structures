@@ -50,23 +50,18 @@ Node* copyRandom_method2(Node* head){
             First iteration: Creating new nodes and interweaving them with the original nodes (O(N)).
             Second iteration: Setting random pointers for the new nodes (O(N)).
     Space Complexity (SC): O(1)
-
-    
      */
     Node* temp = head;
     while(temp){ // step  1  &  2
         Node *newNode = new Node(temp->val);
         /* 
-        
-         -------------------------------
-
+        ------------------------------
             temp  =   1*
             newNode = 1 -> 2 -> ---
-                     head
+                    head
             temp  =   1* -> 2
 
             newNode = 1 -> 1* ->  2 
-
          */
         newNode->next = temp->next;
         temp->next = newNode;
@@ -75,17 +70,17 @@ Node* copyRandom_method2(Node* head){
         //                        head
         temp = temp->next->next;         }
 
-        Node* dummy = new Node(0);
-        Node* itr = head ;
-        while (itr){
-            /* 
-            1 ===> 2 ===> 3
-              ->1-> ->2->  ->3
-              
-             */
-            if (itr->random) 
-                itr->next->random = itr->random->next;
-                itr = itr->next->next;       }
+    Node* dummy = new Node(0);
+    Node* itr = head ;
+    while (itr){
+        /* 
+        1 ===> 2 ===> 3
+            ->1-> ->2->  ->3
+            
+            */
+        if (itr->random) 
+            itr->next->random = itr->random->next;
+            itr = itr->next->next;       }
 
         // now all random & next is setup with but its along next now we have to remove rest part & take rest 
     itr = head ;
