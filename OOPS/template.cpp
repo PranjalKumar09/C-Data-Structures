@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 /*
     Template Datatype
 
@@ -26,6 +25,11 @@ using namespace std;
                 cout << " " << i * (ptr+i)
             cout << endl;
         }
+
+    Eariler it was usen as template <class T>
+    there can also be template<class T, class S>
+    or in new
+    template <typename T, typename S>
  */
 
 template <typename T>
@@ -65,8 +69,7 @@ void Array<T>::print() const {
     cout << endl;
 }
 
-
-
+// When defining member functions outside the class, use `template <class T>` and specify `Class_name<T>::` before the function definition.
 
 template <typename T>
 T add(T a, T b) {
@@ -89,19 +92,4 @@ int main() {
     return 0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
