@@ -1,0 +1,207 @@
+ A process or ordering/arangin the given element in sequence/ order as per given certia
+
+
+    ceritera can be anything
+ 
+ 1) Bubble sort
+ 2) Selection sort
+ 3) Insertion sort
+ 4) Radix sort
+ 5) Merge sort
+ 6) Quick sort
+ 7) Heap sort
+
+
+
+
+Comparision based and non Comparision based sorting
+    Comparision -> element are compared with each other to achieve sorting , bubble, selection, insdrtion , merge, quick, heap
+    Non Comparision -> Radix sort
+        (without any comparsion)
+
+
+
+In place soritng algorithms 
+    alogirithm whose auxiliary/addition space requirment
+
+
+    at max O(1) -> Excluding recursion
+    at max O(log n) -> for recursion stack
+
+Merge sort is not inplace -> O(n + log n) -> O(n)
+
+
+Stable storing algorithm: if relative postion of non distinct element is maintained before & after sorting 
+    
+
+    inversion in array -> if pair of indices (i, j) is considered to be an inversoin of given array [1...n] if i < j   & A[i] > A[j]
+
+
+    min inversion = 0
+    max invcersion =  nC2
+
+
+TC of any comparision based sorting algorithm
+    Depends upon
+        no of element comparision
+        no of swap (no of inversion)
+    TC = O(comparion + swap)
+
+
+    1  Buble sort
+        50 42 70 19 10 5 43 
+
+    pass1: 42 50 70 19 10 5 43
+
+            42 50 19 10 5 43 70 -> pass 1 o.p
+
+    pass 2: 42 19 10 5 43 50 70 
+    pass 3: 42 19 10 5 43 50 70 
+    pass 4: 19 10 5 42 43 50 70  ->
+
+    to have n element correct we can    n-1 correct position
+
+
+
+    for (i -> n-1; i++)
+        for (j = 1; j -> n-1; j++)
+            if (a[j] > a[j+1]) swap(a[j], a[j+1])
+
+
+    make difference 
+       for (i -> n-1; i++)
+        for (j = 1; j -> n-i; j++)
+            if (a[j] > a[j+1]) swap(a[j], a[j+1])
+
+
+    we can even have flag for more better performajce
+
+
+    make difference 
+    flag = 0
+    for (i -> n-1; i++)
+        for (j = 1; j -> n-i; j++){
+            if (a[j] > a[j+1]) 
+            {swap(a[j], a[j+1])
+            flag = 1}}
+        if (flag == 0) break;
+
+
+
+
+in optimize on best wdconstiopn
+
+            no of swaps   no of comp
+best case      0            n-1
+wrost case   n*(n-1)/2      n*(n-1)/2
+
+    wrost -> o
+    best case -> sigma
+
+
+
+ imp
+    1) Space complexity = O(1)
+    2) Stable & Inplace
+
+
+
+
+
+
+Selection sort  
+    in ith pass , find postion of 'i' the smallest elements
+    swap it with eleemtn that is present in ith index
+    keep repeating until array sorted
+
+
+    for (i  0 -> n-1; i++)
+        min = i
+        for (j = i+1 -> n-1 ; j++)
+            if (arr[j] < arr[min]) min = j
+        swap(arr[i], arr[min])
+    
+            no of swaps   no of comp
+best case      n-1           n*(n-1)/2
+wrost case  n-1          n*(n-1)/2
+
+
+best case -> sigma(n^2)
+wrost case -> O(n^2)
+
+i.p. -> 7 10 5 2 9 50 15 35
+pass 1 -> 7 10 5 2 9 50 15 35
+pass 2 -> 2 10 5 7 9 50 15 35
+pass 3 -> 2 5 10 7 9 50 15 35
+....
+
+
+in any type of input it do same things
+
+    imp observtion
+        1) space complexity -> O(1)
+        2) alwasy n-1 passes 
+        3) every  pass -> excatly 1 swap
+        4)_ total swap = n-1 swaps alwasy
+        5) slection sort takes min no of swaps amaon all comparsion: based sorting algoithm in wrost case: n-1 , swaps -> O(n)
+
+
+    insertion sort
+        in first part sorted pass
+        in every pass take unsorted element from another part, insert in sorted part
+
+    
+    void Insertion_Sort(vector<int> &Array){
+    for(int i  = 0 ; i < Array.size() ; i++){
+        int j = i ;
+        while ( j > 0 && Array[j-1] > Array[j]){   
+        swap(Array[j-1], Array[j]); j = j--; //  swap(Array[j-1], Array[j--]); <-his will not work well
+}    }}
+
+i.p -> 60 40 45 85 37 15
+pass 1 -> 60 | 40 45 85 37 15
+pass 2 -> 40 60 | 45 85 37 15
+pass 3 -> 40 45 60 | 85 37 15
+pass 4 -> 40 45 60 85 | 37 15
+pass 5 -> 37 40 45 60 85 | 15
+pass 6 -> 15 37 40 45 60 85 |
+
+    Comp       |  swaps
+BC  n-1        | O
+WC  n(n-1)/2   | n(n-1)/2
+
+BC -> sigma(n)
+wc -> O(n^2)
+
+property->
+    1) always takes n-1 passes
+    2) TC
+        BC -> sigma(n)
+        WC -> O(n^2)
+
+    3) SC -> O(1) -> inplace
+    4) stable algoithm
+
+if inpute list is pre sorted, then it takes time of O(n+d)
+
+
+
+Radix sorting
+    non ocomparions based sorting
+    no of passes = no of digitas in max element of given input array
+    it makes are of bucket/bins concept
+
+
+    64, 723, 99, 83 , 545, 65 , 333, 7 , 4 , 124
+
+pass1 -> 723, 83, 333, 64, 124, 545, 65, 7, 99
+pass 2 -> 4 , 7 , 723, 124, 333, 545 , 64, 83 , 99
+pass3 -> sorted
+
+TC: O(d*(n+b))
+ b -> base of given input , decimal , b = 10
+ d -> no of digits in max element of given input array
+ n -> no of elements in given input array
+
+ 2) REdix sort -> Not implace, stable
+        
