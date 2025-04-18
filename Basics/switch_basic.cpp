@@ -7,6 +7,8 @@ using namespace std;
 int main() {
   int age = 4;
 
+  // case must have int , char, short, long, enum  (Even expression leading to this)
+
   if (age == 18) {
     switch (age) {
     case 18:
@@ -15,12 +17,12 @@ int main() {
   } else if (age >= 18) {
 
     switch (age) {
-    case age:
+    case 18:
       cout << " You are above 18 years old.";
     }
   } else {
     switch (age) {
-    case age:
+    case 18:
       cout << " You are below 18 years old.";
     }
   }

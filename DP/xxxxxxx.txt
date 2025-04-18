@@ -1,0 +1,79 @@
+# Commit 1 (2025-02-02): Modifications to existing files
+git add CountSubsecquenceSumEqualsK* ../Stack/evaluation_postfix_expression.cpp
+git commit -m "✨ Improved DP logic for subset sum and fixed postfix evaluation edge case" --date "2025-02-02"
+
+# Commit 2 (2025-02-03): Adding new feature files (first batch)
+git add AssignsSign AssignsSign.cpp
+git commit -m "🚀 Added AssignsSign: new approach for sign-based array manipulation" --date "2025-02-03"
+
+# Commit 3 (2025-02-04): More new files
+git add CoinChange2 CoinChange2.cpp
+git commit -m "💰 Implemented CoinChange2: enhanced dynamic programming for multiple coin combinations" --date "2025-02-04"
+
+# Commit 4 (2025-02-05): New problem addition
+git add CountPartitionGivenDifference CountPartitionGivenDifference.cpp
+git commit -m "➗ CountPartitionWithDifference: added optimized partition problem handling" --date "2025-02-05"
+
+# Commit 5 (2025-02-06): Bugfix and new file
+git add CountSubsecquenceSumEqualsK
+git commit -m "🛠️ Bugfix: corrected subproblem indexing for subset sum calculation" --date "2025-02-06"
+
+# Commit 6 (2025-02-07): New algorithm added
+git add EditDistance EditDistance.cpp
+git commit -m "📌 Added Edit Distance DP: handling string transformations with minimal edits" --date "2025-02-07"
+
+# Commit 7 (2025-02-08): KnapSack problem addition
+git add KnapSack0_1 KnapSack0_1.cpp
+git commit -m "🎒 Implemented 0/1 Knapsack DP with traceable path reconstruction" --date "2025-02-08"
+
+# Commit 8 (2025-02-09): New file addition
+git add MinimumCoins MinimumCoins.cpp
+git commit -m "💵 Minimum Coins Problem: added DP approach with backtrack reconstruction" --date "2025-02-09"
+
+# Commit 9 (2025-02-10): Rod Cutting problem added
+git add Rod_Cutting Rod_Cutting.cpp
+git commit -m "🪓 Rod Cutting DP: max profit calculation with segmented cuts" --date "2025-02-10"
+
+# Commit 10 (2025-02-11): Wildcard distance problem
+git add Wild_distance Wild_distance.cpp
+git commit -m "🐾 Wildcard Matching Distance: added string matching with wildcard support" --date "2025-02-11"
+
+# Commit 11 (2025-02-12): Stock trading algorithms
+git add best_time_buy_sell_stock6 best_time_buy_sell_stock6.cpp
+git commit -m "📈 Stock Trading Algo v6: enhanced strategy for max profit with cooldowns" --date "2025-02-12"
+
+# Commit 12 (2025-02-13): More stock variants
+git add best_time_buy_sell_stocks best_time_buy_sell_stocks.cpp
+git commit -m "📉 Stock Buy/Sell: added dynamic trading strategy with multiple transactions" --date "2025-02-13"
+
+# Commit 13 (2025-02-14): Stock strategy improvements
+git add best_time_stocks2 best_time_stocks2.cpp
+git commit -m "💹 Stock Strategy v2: optimized two-transaction approach with profit memoization" --date "2025-02-14"
+
+# Commit 14 (2025-02-15): Longest subsequence problems
+git add longestIncreasing_Subsequence longestIncreasing_Subsequence.cpp
+git commit -m "📌 Longest Increasing Subsequence: optimized binary search and patience sorting approach" --date "2025-02-15"
+
+# Commit 15 (2025-02-16): Longest string chain added
+git add longest_string_chain longest_string_chain.cpp
+git commit -m "🔗 Longest String Chain: added graph-based chain formation solution" --date "2025-02-16"
+
+# Commit 16 (2025-02-17): Matrix chain multiplication
+git add matrixChainMultication.cpp
+git commit -m "🧠 Matrix Chain Multiplication: DP table memoization with cut optimization" --date "2025-02-17"
+
+# Commit 17 (2025-02-18): Unbounded knapsack problem added
+git add unbounded_knapsack unbounded_knapsack.cpp
+git commit -m "🎒 Unbounded Knapsack: recursive and bottom-up approach with optimal space usage" --date "2025-02-18"
+
+# Commit 18 (2025-02-19): Stack implementation fixes
+git add ../Stack/ll_implementation* ../Stack/queue_implementation.cpp
+git commit -m "🔧 Fixed linked list and queue implementations — edge case memory leaks handled" --date "2025-02-19"
+
+# Commit 19 (2025-02-20): Stack expressions and conversions
+git add ../Stack/postfix_to_infix* ../Stack/infix_to_postfix.cpp
+git commit -m "🔁 Expression Conversion: added postfix ↔️ infix conversion utilities with error handling" --date "2025-02-20"
+
+# Commit 20 (2025-02-21): Stack-based problem optimizations
+git add ../Stack/valid_parenthesis* ../Stack/reverse_string.cpp
+git commit -m "✅ Parenthesis validation and string reversal improvements — optimized stack operations" --date "2025-02-21"

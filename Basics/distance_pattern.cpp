@@ -10,8 +10,9 @@ int mini(int a, int b , int c , int d){
 }
 int main(){
     int num;
-    cout << "Enter the number : ";
-    cin >> num;
+    // cout << "Enter the number : ";
+    // cin >> num;
+    num = 3;
     for (int i = 0 ; i < 2*num-1 ;  i++){
         for (int  j =0 ; j < 2*num-1 ;  j++)
             cout << mini(i , j ,(2*num -2)- i, (2*num-2-j));

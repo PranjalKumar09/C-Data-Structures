@@ -39,7 +39,9 @@ long f2(int ind, bool buy, vector<vector<vector<long>>> &dp , int limit ){
 
 
 long f3(){
+
     vector<vector<vector<long>>>  dp(n+1,vector<vector<long>> (2, vector<long>(limit_i+1, 0)));
+    
     for (int i = n-1; i >= 0; i--){
         for (int j = 0; j < 2; j++){
             for (int k = 1; k <= limit_i; k++){
@@ -80,7 +82,7 @@ long f4(){
 int main(){
     cout << f(0, 1, limit_i) << endl;
 
-    vector<vector<vector<long>>>  dp(n,vector<vector<long>> (2, vector<long>(limit_i, -1)));
+    vector<vector<vector<long>>>  dp(n,vector<vector<lo ng>> (2, vector<long>(limit_i, -1)));
     cout << f2(0, 1, dp, limit_i) << endl;
 
     cout << f3() << endl;

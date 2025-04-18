@@ -8,8 +8,8 @@ SITES SOLUTIONS
 https://www.geeksforgeeks.org/problems/max-min/1
 int findSum(int A[], int N)
     {
-    	int smallest =  A[0] , largest = A[0];
-  
+    int smallest =  A[0] , largest = A[0];
+
         for (int i = 1 ; i < N ; i++){
             if (smallest > A[i]) smallest = A[i];
             if (largest < A[i]) largest = A[i];}

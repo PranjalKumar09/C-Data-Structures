@@ -14,7 +14,7 @@ int ans(vector<int> &ip, int element){
         if (ip[i] == element)
             check = true;
         if (check && ip[i] > element)
-            count++;        
+            count++;
     }
     return count;
 
@@ -22,8 +22,9 @@ int ans(vector<int> &ip, int element){
 vector<int> solve(vector<int>& arr , vector<int> &ip){
     vector<int> result(ip.size() , 0);
     for (int i = 0; i < ip.size(); i++)
-        result[i] = ans(arr, ip[i]);        
+        result[i] = ans(arr, ip[i]);
     return result;
+    
     
 }
 

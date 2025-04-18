@@ -1,32 +1,35 @@
 /* 
 Types of pointers
-Null -> If we dont have address to be arranged to be assigned we can use NULL 
-int *p = NULL ; \\ OR 0 
-priting p will give 0 while printing *p will give segmenation fault beacause how we can print value in no address
+1. Null Pointer
+    A pointer that points to nothing (0).
+    Use when you don't want to assign any address yet.
 
+2. Void Pointer (Generic Pointer)
+    Can store the address of any data type, but must be typecasted before dereferencing.
 
-Void -> Hold adress of any type & can be typeroted to any type (Generic )
 void *p
 int i = 10 ; // like this
 *p = &i
 
-
-Wild -> when declared not initialized but when it no longer remain wild pointer 
-
-Double Array 
-Danging -> pointing location (freed on deleted )
+3. Wild Pointer
+    A pointer that is declared but not initialized. Points to garbage
 
 
 
-THREE WAYS
-deloation of memory 
-function call      ->      
+4. Dangling Pointer
+    Points to a memory location that has been freed or deleted.
 
 
-int *p 
-//code 
-p =  ... 
-variable out of scope
+5. Double Pointer
+    Pointer to a pointer. Used in dynamic 2D arrays or function passing.
+
+
+There are 3 common ways a pointer becomes dangling:
+    Function returns local variable (goes out of scope)
+    Memory is deallocated (delete or free)
+    Pointer assigned to a variable that goes out of scope    
+
+
 
 
 
@@ -37,6 +40,7 @@ Array ->   *arr  |  *(arr + 1)    | *(arr + 2 ) .........    |      *(arr + n-1)
 Index ->    0    |      1         |      2      .........    |          n-1
 
 
+arr[i] == *(arr + i) == i[arr] == *(i + arr)
 
 
 
@@ -53,7 +57,7 @@ size of  &arr      ->  8  (address)
 
  &arr = arr      {in case of array}
 
-// note but you can compare them it gives error 
+note but you can compare them it gives error 
 however you can print both
 
 
@@ -84,13 +88,10 @@ char *p = &ch[0];
 cout << p; //abcde
 
 
-In single char char temo = 'z
+In single
 char temp = 'z'
 char *p2 = &temp;
 cout << p2; //address will come 
-
-
-
 
 
 
@@ -99,12 +100,10 @@ a is array              |    p is pointer variable
 size of a = 10 bytes    |    size of p = 4 bytes
 a and &a same           |    p and &p are different
 a++ in invalid          |    p++ is valid
-a[0] = 'k'   VALID      |    p[o] ="k" INVALID
+a[0] = 'k'   VALID      |    p[0] ="k" INVALID
 
-
-
-In single char it goes to address & zee when null case then till null casr it prints till null case (normally 1 size)
-
+When printing a single char using a pointer (e.g., char* p = &ch;), it may print not just the character but everything from that address onward until it hits a null terminator (\0).
+Since a single char doesn’t have a null terminator by default, this can cause unexpected output or garbage values.
 
 Avoid: char *c = "abcde" // (alocate any memory to it)
 
@@ -112,9 +111,9 @@ Print Address: cout << *p ; // in single char
 here it is not array it is pointer 
 
 
-int getsum (int arr[]) // *arr[]
+int getsum (int arr[]) // *arr same // *arr[]  , different
 cout << &p ; (array size)
-Address is passsing 
+Address is passing 
 
 We can send part of arr in function
                   __________________________________________
@@ -143,54 +142,61 @@ using namespace std;
 
 int main()
 {
-    // int *p = NULL;
-    // cout << p << " "  << endl; // 0 
+    // ------------------ NULL Pointer ------------------
+    int* p1 = NULL;  // or int* p1 = 0;
+    cout << "NULL Pointer: " << p1 << endl; // Output: 0 (null address)
+    // cout << *p1 << endl; // SEGMENTATION FAULT - dereferencing NULL
 
-    // cout << *p ;  //Segmentation fault (core dumped) Error
+    // ------------------ Wild Pointer ------------------
+    int* p2; // Wild pointer (uninitialized)
+    // cout << p2 << endl;  // Prints garbage address
+    // cout << *p2 << endl; // Undefined behavior (may print garbage or crash)
 
+    // ------------------ Pointer with Initialization ------------------
+    int a = 10;
+    int* p3 = &a;
+    cout << "Value at p3: " << *p3 << endl; // Output: 10
 
+    // ------------------ Void Pointer ------------------
+    void* vp;
+    int b = 20;
+    vp = &b;
+    // cout << *vp << endl; // ERROR: Cannot dereference void*
+    cout << "Void pointer (after casting): " << *(int*)vp << endl; // Correct
 
+    // ------------------ Pointer with Array ------------------
+    int arr[5] = {10, 20, 30, 40, 50};
 
+    cout << "Pointer and Array Equivalence:" << endl;
+    cout << (arr[0] == *(arr)) << endl;     // 1
+    cout << (arr[1] == *(arr + 1)) << endl; // 1
+    cout << (arr[2] == *(arr + 2)) << endl; // 1
+    cout << (arr[3] == *(arr + 3)) << endl; // 1
+    cout << (arr[4] == *(arr + 4)) << endl; // 1
 
-    // int *p ;
-    // cout << p; // print random memory 0x7fd6be51e934
+    // Garbage values (out of bounds)
+    // cout << *(arr + 5) << endl;
+    // cout << arr[5] << endl;
 
-    // cout << *p ; //puts random garbage value
+    // arr[i] == *(arr + i) == i[arr] == *(i + arr)
+    cout << "arr[2]: " << arr[2] << " == *(arr + 2): " << *(arr + 2)
+         << " == 2[arr]: " << 2[arr] << " == *(2 + arr): " << *(2 + arr) << endl;
 
+    // Demonstrating *arr + i vs *(arr + i)
+    cout << "*arr + 1 = " << *arr + 1 << endl;       // arr[0] + 1 = 10 + 1 = 11
+    cout << "*(arr + 1) = " << *(arr + 1) << endl;   // arr[1] = 20
 
+    // ------------------ Size of pointers and arrays ------------------
+    cout << "sizeof(&arr) = " << sizeof(&arr) << endl; // 8 (address of entire array)
+    cout << "sizeof(*arr) = " << sizeof(*arr) << endl; // 4 (int element size)
 
+    // Comparing &arr and arr
+    cout << "Address (&arr): " << &arr << " | arr: " << arr << endl;
 
-    // implemeting pointers in arrays 
-    int arr[5] = {10 , 20 , 30 , 40 , 50};
-    // cout << (arr[0]  == *(arr)  )     ; // 1 
-    // cout << (arr[1]  == *(arr + 1) )  ; // 1 
-    // cout << (arr[2]  == *(arr + 2) )  ; // 1 
-    // cout << (arr[3]  == *(arr + 3) )  ; // 1 
-    // cout << (arr[4]  == *(arr + 4) )  ; // 1 
-
-    // cout << *(arr+5) ; // both store garbage values 
-    // cout << arr[5]; // store garbage values
-
-    // note > arr[i]   =    *(arr + i)   =    i[arr]   = *(i+arr) all 4  are equals
-
-
-    // cout << *arr + 1 ; // 11
-    // note > *arr + i  != *(arr + i)         *arr + i => arr[0] + i           *(arr+i) = arr[i]
-
-
-
-    // cout << sizeof(&arr) << endl; // 8
-    // cout << sizeof(*arr) << endl; // 4
-
-
-    
-    // cout << &arr << arr << endl; // each time different address , however there both address is same
-
-
-
-    // arr+=1 ; // ERROR
-    
-
+    // arr += 1; // Error: Cannot modify array name (const pointer)
+    // But we can do:
+    int* ptr = arr;
+    ptr += 1; // Valid: pointer arithmetic
 
     return 0;
-}
+    }

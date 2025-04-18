@@ -30,6 +30,13 @@ void faster_method(int n, vector<string> &digits_in_words){
     }
 }
 
+void print_digits2(int n, vector<string> &digits){
+    if (!n) return;
+    int digit = n % 10;
+    print_digits2(n / 10, digits);
+    cout << digits[digit] << " ";
+
+}
 
 
 

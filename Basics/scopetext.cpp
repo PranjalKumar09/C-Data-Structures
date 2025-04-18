@@ -2,13 +2,14 @@
 using namespace std;
 
 int main(){
-    int outside  = 3;               
-    if (true){                          
-        int outside = 5;                
+    int outside  = 3;
+    if (true){
+        int outside = 5;
         cout << outside << endl;}       //5
     cout << outside << endl;            //3
+    
     if (1){
-        int temp = 5;                   
+        int temp = 5;
         cout << temp << endl;  }       //5
     //cout << temp;                     //error
 

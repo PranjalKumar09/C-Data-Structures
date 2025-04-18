@@ -86,3 +86,108 @@ int arr[] = {-30, -28, -25, -22, -20, -18, -15, -12, -10, -8, -5, -3, 0, 2, 4, 6
 int size = sizeof(arr)/sizeof(arr[0]);
 
 
+
+
+🔰 Foundational Topics (Start here)
+
+    Basics – Brush up on syntax, input/output, basic logic.
+
+    Pointers – Crucial for understanding memory, arrays, linked lists.
+
+    Arrays – Core of many problems, easy win to start with.
+
+    2D Arrays – Build on arrays, gets into matrix problems.
+
+    Strings – Frequently asked in interviews, lots of pattern problems.
+
+🧱 Core DSA Structures
+
+    LinkedList – Important for understanding dynamic memory and pointer play.
+
+    Stack
+
+    Queue
+
+    HashMaps – Super important for frequency/count-based problems.
+
+    Heaps – For priority-based operations.
+
+    BinaryTrees
+
+    BinarySearchTrees
+
+    Tries – For prefix-based searching, autocomplete, etc.
+
+⚙️ Algorithms
+
+    Recursion – Base for backtracking, DP, trees.
+
+    BackTracking – Builds directly on recursion.
+
+    Binary Search (You mentioned BinarySearchTrees but consider binary search too!)
+
+    GreedyAlgorithm
+
+    DP (Dynamic Programming) – Most feared but super important.
+
+    Graphs – BFS, DFS, Dijkstra, etc.
+
+💻 Miscellaneous & Advanced
+
+    OOPS – Especially for interviews where object-oriented design is tested.
+
+    File_Handling – Less important for core DSA, but good for real-world usage.
+
+    TempOperation – Not sure what this refers to, could you clarify?
+
+    LeetCode – Mix practice here throughout the process.
+
+
+Basics
+=======   
+switch_basic.cpp *
+scopetext.cpp
+useful_functions.txt 
+Print_Digit.cpp **
+count_digit_inNo.cpp *
+reverseAnumber.cpp *
+check_palindrome.cpp *
+Print_all_divisors.cpp
+HCF.cpp *
+sqrt_square_root.cpp *
+fibobacciSeries.cpp *
+armstongNo.cpp *
+reverse_array.cpp *
+maxium_minium_array.cpp
+numbr_of_nge_to_right.cpp
+distance_pattern.cpp *
+power_of_2.cpp *
+No_of_no_divisible_by_both_number_inclusion_exclusion_file.cpp *
+roman_to_int.cpp *
+combinatoinal_sum.cppv*
+Catalan_Number.cpp *
+
+
+Pointers
+========
+pointer_basic.cpp *
+Type_of_pointers. *
+Refrence_Variable.cpp -
+Double_ptr.cpp
+two_array_dm_allocation.cpp
+static_varaiable.cpp
+Macro_create.cpp
+
+
+Arrays
+
+
+
+
+
+
+
+
+TODO 
+msp(minimum spanning tree)
+

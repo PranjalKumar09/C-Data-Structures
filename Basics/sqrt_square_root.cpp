@@ -1,4 +1,4 @@
-#include<iostream>
+    #include<iostream>
 
 using namespace std;
 
@@ -8,15 +8,22 @@ double square_root_sqrt(int num , int precision){
 
     
     int left = 1 , right = num - 1  , mid;
+    double ans;
     while(left < right){ // this loop will find integer answer
         // mid * mid shoule equal or close to number, let mid*mid = NUM
         // if NUM  is greater than num then decrease left
         // if NUM is less than number then increase left 
         // if equal break loop
         mid = left +( right - left)/2;
-        if (mid * mid  == num) break;
-        mid * mid > num ? right = mid - 1 : left = mid + 1;} 
-    double factor = 1  , ans = mid;
+        if (mid * mid == num){
+            ans = mid;
+            break;}
+        if (mid * mid < num) {
+            ans = mid;
+            left = mid+1;}    
+        else right = mid-1; 
+        } 
+    double factor = 1 ;
     for (int i = 0 ; i < precision ; i++){
         factor/=10;
         for(double j = ans ; j * j  < num ; j= j+ factor)

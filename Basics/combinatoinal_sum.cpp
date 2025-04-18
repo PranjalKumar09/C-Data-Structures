@@ -46,7 +46,7 @@ void find_combinational_ueque(int ind, int target, vector<int> &arr, vector<vect
 
 
 int main() {
-    vector<int> arr = {2, 3, 6, 7};
+    vector<int> arr = {2, 3, 3, 4, 6, 7};
     int target = 7; 
     vector<vector<int>> ans;
     vector<int> ans_element;

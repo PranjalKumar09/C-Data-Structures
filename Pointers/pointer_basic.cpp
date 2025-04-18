@@ -14,7 +14,7 @@
     int *ptr  ;  // Garbage value 
     int *ptr  = &num ; // Always saves memory   
 
-    // * num and ptr should be of the same type 
+    * num and ptr should be of the same type 
 
     Example
     ______          ______  
@@ -44,7 +44,7 @@
     int *ptr1 = &num ;
     int *ptr2 = ptr1 ;
 
-    // Output of *ptr++ and (*ptr)++ will be the same
+    Output of *ptr++ and (*ptr)++ will be the same
     
     ptr += n;
     where n is an integer 
