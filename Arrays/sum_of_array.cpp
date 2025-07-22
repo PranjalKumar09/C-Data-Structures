@@ -10,7 +10,7 @@ void display_as_sum(vector<int> &arr){
     int size = arr.size();
     for (int i = 0 ; i < size  ; i ++)
         cout <<  arr[i] ;
-
+    
 }
 
 
@@ -42,7 +42,6 @@ vector<int> sum_of_arrays(vector<int> &arr1 , vector<int> &arr2){
     if(carry!= 0){
         answer.push_back(carry);
     }
- 
     return answer;
 }
 

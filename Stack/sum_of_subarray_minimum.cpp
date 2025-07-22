@@ -18,6 +18,7 @@ Optimize:
     previ smaller for lowest = 0
     next smaller for out of range = n-1
 
+Now one thing here in one we should use strictly greater , and other greater or equal this to prevent duplicating
         
  */
 
