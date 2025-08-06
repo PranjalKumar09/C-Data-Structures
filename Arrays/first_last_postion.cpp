@@ -1,11 +1,11 @@
-/* 
-in binary there is seprate function for first and last but in BF it is in one loop
-further it BS can solved direct (recommended) and  recusive 
+/*
+in binary there is septate function for first and last but in BF it is in one loop
+further it BS can solved direct (recommended) and  recursive
 but still binary search is better(direct one)
 
 
 
- */
+*/
 #include <iostream>
 #include <vector>
 #include <climits> // for INT_MAX
@@ -46,6 +46,7 @@ int first_position(vector<int> &arr , int target){
 int end_position(vector<int> &arr , int target){
     int start = 0 , end = arr.size() - 1 , ans = -1;
     while (start <= end){
+        int mid = start + (end - start) / 2;
         int mid = start + (end - start) / 2;
         if (arr[mid] > target) {    
             end = mid - 1;

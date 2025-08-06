@@ -1,7 +1,7 @@
-/* 
-BruteForce : Copy non zero to temp array , then copy temp array element to orignal then fill zero
+/*
+BruteForce : Copy non zero to temp array , then copy temp array element to original then fill zero
 
-Optmized : 2 pointer approach
+Optimized : 2 pointer approach
  */
 
 #include<iostream>
@@ -30,7 +30,7 @@ void OptmizedSolution(vector<int> &arr){
     int j = arr.size()-1;
     for (int i = 0; i <= j; i++)if (arr[i] == 0) {swap(arr[i] , arr[j]); j--;}
     }
-        
+    
         
 
 

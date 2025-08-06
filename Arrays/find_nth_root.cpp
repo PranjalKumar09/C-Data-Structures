@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 long long check(long long mid, int n) {
     long long result = 1;
     for (int i = 0; i < n; ++i) {

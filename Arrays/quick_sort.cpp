@@ -1,23 +1,22 @@
 /*
-
-
 Quick sort not stable sorting algorithm in its typical implementation
-Quick Sort is in place swipping techinique not stable 
+Quick Sort is in place swapping technique not stable 
 
 
 Advantage of Quick Sort
 
-* Devide & conquer algorithm that makes easier to solve problems
+* Divide & conquer algorithm that makes easier to solve problems
 * Efficient on large data sets 
 * Low overhead as it only requires small amount of memory to function
 
 Disadvantage of Quick Sort
 
-* Wrost Case TC = o(N2) when pivot choosen poorely
+* Worst Case TC = o(N2) when pivot choosen poorly
 * Not good choice for small data sets
-* Not stable sort meaning that if two element have same key their relative order will not be preserved in sorted output in case of quick sort, beacause here we preserved in sorted output in case of quick sort, because here we swapping elements according to pivot postion (without considering their original positon)
 
-  */
+* Not stable sort meaning that if two element have same key their relative order will not be preserved in sorted output in case of quick sort, because here we preserved in sorted output in case of quick sort, because here we swapping elements according to pivot postion (without considering their original position)
+
+*/
 
 
 

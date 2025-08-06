@@ -1,10 +1,10 @@
 
 /* 
 Some important points
-condtion is (left < right) NOT left <= right so remember.
-Also no mid  maken in this
+conation is (left < right) NOT left <= right so remember.
+Also no mid  make in this
 IF If left value is less than 0 then increase left 
-ELSE else check if riht one greater than 0 then decrease right
+ELSE else check if right one greater than 0 then decrease right
 ELSE IF if both fails then only one thing possible left one is postive and right one is negative then swap them  */
 #include<iostream>
 

@@ -94,12 +94,11 @@ public:
             int childCount = 0;
             char nextChar;
             TrieNode* nextNode = nullptr;
-            for (int i = 0; i < 26; i++) {
+            for (int i = 0; i < 26; i++)
                 if (node->links[i] != nullptr) {
                     childCount++;
                     nextChar = 'a' + i;
                     nextNode = node->links[i];
-                }
             }
             if (childCount == 1) {
                 ans.push_back(nextChar);

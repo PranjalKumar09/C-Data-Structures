@@ -13,13 +13,13 @@ Implement Trie with countWordsEqual Words starting with, erase to, insert
 
 Insert
 
-apple    a       p         p         l      e 
-      ew = 0   ew = 0   ew = 0   ew = 0   ew = 1    
+apple    a       p         p         l      e
+      ew = 0   ew = 0   ew = 0   ew = 0   ew = 1
       cp = 0   cp = 1   cp = 1   cp = 1   cp = 1
 
-applee   a       p         p         l      e        e         
-      ew = 0   ew = 0   ew = 0   ew = 0   ew = 1  ew = 2         
-      cp = 0   cp = 2   cp = 2   cp = 2   cp = 2  cp = 1     
+applee   a       p         p         l      e        e
+      ew = 0   ew = 0   ew = 0   ew = 0   ew = 1  ew = 2
+      cp = 0   cp = 2   cp = 2   cp = 2   cp = 2  cp = 1
 
 Erase
 reduce

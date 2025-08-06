@@ -10,7 +10,7 @@ int main(){
             if (arr[i] == arr[j])
                 count++;
             } 
-        if (count == 1){
+       pp if (count == 1){
             cout << "Unique element is " << arr[i];
             break;}             }
     // method 2 
