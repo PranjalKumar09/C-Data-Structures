@@ -6,7 +6,7 @@ in brute force strat2  == str.length() because becase start2 will increased in p
 similarly start1 taken not start + 1 because start2 value is inceased in while already
 
 
- */
+*/
 
 #include <iostream>
 #include<string>
@@ -17,19 +17,19 @@ similarly start1 taken not start + 1 because start2 value is inceased in while a
 using namespace std;
 
 int brute_force_lonegest_prefix_suffix(string str){
-    int count = 0 ; 
-    for (int i =  0; i < str.length()/2; i++) {
-        for (int j = str.length()/2; j < str.length(); j++) {
-         int start1 = 0 , start2 = j ; 
-         while ( start2 < str.length()) {
-            if (str[start1] == str[start2] ){ start1++; start2++;}
-            else break;
-         }
-         if (str.length()  == start2) count = max (count , start1 ); 
- }}
- return count;}
+int count = 0 ; 
+for (int i =  0; i < str.length()/2; i++) {
+    for (int j = str.length()/2; j < str.length(); j++) {
+        int start1 = 0 , start2 = j ; 
+        while ( start2 < str.length()) {
+        if (str[start1] == str[start2] ){ start1++; start2++;}
+        else break;
+        }
+        if (str.length()  == start2) count = max (count , start1 ); 
+}}
+return count;}
 
- int KMP_Method_lonegest_prefix_suffix(string str){
+    int KMP_Method_lonegest_prefix_suffix(string str){
     int j = 0, i = 1;
     vector<int> kmp(str.length(), 0);
     while( i < str.length()){
@@ -41,18 +41,16 @@ int brute_force_lonegest_prefix_suffix(string str){
             else {kmp[i] = 0; i++;}        }
             }
     return kmp.back() ; 
- }
+    }
 
- int main(){
+int main(){
 
-    cout << endl ;
+cout << endl ;
 
-    string str = "abcdjkfnabcd";
-    cout << brute_force_lonegest_prefix_suffix(str) << endl << KMP_Method_lonegest_prefix_suffix(str);
+string str = "abcdjkfnabcd";
+cout << brute_force_lonegest_prefix_suffix(str) << endl << KMP_Method_lonegest_prefix_suffix(str);
 
-    cout << endl ;
+cout << endl ;
 
-    return 0;
+return 0;
 }
-
- 
