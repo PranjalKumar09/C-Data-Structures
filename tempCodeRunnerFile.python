@@ -1,0 +1,15 @@
+# Read input lines and keep only unique lines in order
+lines = []
+while True:
+    try:
+        line = input().strip()
+        if not line:  # Stop on empty line
+            break
+        if line not in lines:  # Add only if not already seen
+            lines.append(line)
+    except EOFError:
+        break
+
+# Print unique lines
+for line in lines:
+    print(line)
