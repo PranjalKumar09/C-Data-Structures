@@ -58,3 +58,61 @@ Single Element in a Sorted Array
     Else:
 
     Single element is in the left half: right = mid.
+
+
+
+Guess a no is BS problem , just in condition we put qns given function , 
+    its already given fn in which return -1 , 0 , 1
+
+
+
+
+Kth Missing Positive Number 
+    Greedy
+    int findKthPositive(vector<int>& arr, int k) {
+        int num = 1, i = 0;
+
+        int n = arr.size();
+
+        while (i < n && k > 0){
+            if (arr[i] == num){
+                i++;
+            }
+            else k--;
+            num++;
+        }
+        while (k--) num++;
+        return num-1; // as num increased at last
+    }
+
+    Binary Search
+        No of missing-> arr[i]-(i+1)
+        Kth missing be -> l + K;  where l is index
+
+        while  (l <= r){
+            int mid = l + (r-l)/2;
+
+            int no_missing = arr[mid] - (mid + 1);
+
+            if (no_missing < k) l = mid+1;
+            else r = mid-1;
+       }
+       return l + k;
+
+
+Minimum time to complete to trip
+    l = 1
+    r = min(time) * total_trips
+
+    while(l < r){
+        mid = ...
+        if (possible(...)) r = mid;
+        else l = mid+1;
+    }
+    return r; // or l
+
+
+    TC = O(log2(r) * n)
+
+    
+
