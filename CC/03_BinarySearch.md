@@ -1,4 +1,3 @@
-# Binary Search Notes (Refined)
 
 ### 1. Binary Search Variants
 
@@ -145,82 +144,95 @@ return arr[n-1] <= mid;
 
 ---
 
+### 11. Maximum Value at a Given Index in a Bounded Array (LeetCode #1802)
 
-Maximum Value at a Given Index in a Bounded Array L- 1802
-    where difference between consitutive element should  <= abs(1)
+* Constraint: The difference between consecutive elements ≤ 1, and all values ≥ 1.
+* Idea: Perform binary search on the maximum value at `index`.
 
-    * we can just compare with left (means least) possible sum
-      left_count * x - (left_count * (left_count + 1))/2
-
-      1 2 3 4 5
-
-      means -> if mid is x
-        then 
-        x-4 -> x-3 -> x-2 -> x-1 -> x
-
-        sum => 4 * x - (1 + 2 + 3 + 4)
-            => 4*x - (4*(5))/2
+  * Use helper function to compute minimal sum required for a given peak value.
+  * Check both left and right sides separately.
 
 
+```cpp
+typedef long long ll;
 
-      But in situation if  x is lower means let it be 3
-        then 1 -> 1 -> 1 -> 2 -> 3
-        since it should be natural no
-        here we will first found sum like above  then add sum of 1
+ll getSumElements(ll count, ll val) {
+    // Sum of sequence: (val-1) + (val-2) + ... until count terms
+    // Equivalent: count*val - (count*(count+1))/2
+    return val * count - (count * (count + 1)) / 2;
+}
+```
 
-        no of 1s -> left_count - (x-1) 
+**Main Function:**
 
+```cpp
+int maxValue(int n, int index, int maxSum) {
+    ll l = 1, r = maxSum, result = 0;
+    while (l <= r) {
+        ll mid = l + (r - l) / 2;
 
-      for right side , everything is same, just right _count is  n-index-1
+        ll left_count  = min((ll)index, mid - 1);
+        ll left_sum    = getSumElements(left_count, mid) 
+                         + max(0LL, index - mid + 1);
 
+        ll right_count = min((ll)n - index - 1, mid - 1);
+        ll right_sum   = getSumElements(right_count, mid) 
+                         + max(0LL, (ll)n - index - 1 - mid + 1);
 
-  typedef long long ll;
-    
-    ll getSumElements(ll count, ll val) {
-        
-        return val*count - (count*(count+1))/2;
-        
-    }
-    
-    int maxValue(int n, int index, int maxSum) {
-        
-        ll left  = 1;
-        ll right = maxSum;
-        
-        ll mid_val;
-        int result = 0;
-        
-        
-        while(left <= right) {
-            
-            mid_val = left + (right - left)/2;
-            
-            ll left_count = min((ll)index, mid_val-1);
-            
-            ll left_sum  = getSumElements(left_count, mid_val);
-            
-            left_sum += max((ll)0, index - mid_val+1);
-            
-            
-            ll right_count = min((ll)n-index-1, mid_val-1);
-            
-            ll right_sum  = getSumElements(right_count, mid_val);
-            
-            right_sum += max((ll)0, n-index-1 - mid_val+1);
-            
-            
-            
-            if(left_sum + right_sum + mid_val <= maxSum) {
-                result = max((ll)result, mid_val);
-                
-                left = mid_val+1;
-            } else {
-                right = mid_val-1;
-            }
-            
+        if (left_sum + right_sum + mid <= maxSum) {
+            result = max(result, mid);
+            l = mid + 1;
+        } else {
+            r = mid - 1;
         }
-        
-        
-        return result;
-        
     }
+    return result;
+}
+```
+
+**Key Points:**
+
+* Left sum and right sum are computed based on triangle numbers (`x, x-1, x-2...`) until reaching 1.
+* If `mid` is small, extra `1`s are added to fill remaining slots.
+* Binary search ensures the largest feasible `mid` is found.
+
+# 
+
+* Condition: Difference between consecutive elements ≤ 1, all elements ≥ 1.
+* Use **binary search** on the peak value at `index`.
+* For each candidate `x` (mid):
+
+- **Left side:**
+
+  * Minimum possible sum is like a staircase:
+
+    $$
+    (x-1), (x-2), (x-3), ... 
+    $$
+
+     $$
+    left\_sum = left\_count \cdot x - \frac{left\_count \cdot (left\_count + 1)}{2}
+    $$
+
+  * If `x` is small, values can’t go below `1`. In that case:
+
+    $$
+    1, 2, 3, ... 
+    $$
+
+    Extra `1`s are added:
+
+    $$
+    no\_of\_ones = left\_count - (x - 1)
+    $$
+
+- **Right side:**
+
+  * Same logic as left, with `right_count = n - index - 1`.
+
+- **Check:**
+
+  * If `left_sum + right_sum + x <= maxSum`, then `x` is possible.
+  * Else reduce `x`.
+
+
