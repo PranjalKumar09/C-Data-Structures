@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
- 
+
 /*
 
 Not linear but hierachical data structure
