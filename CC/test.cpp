@@ -1,39 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-void solveSudoku(vector<vector<char>>& board) {
-    vector<vector<char>> st1(9, vector<char>(9)), st2(9,vector<char>(9)), st3(9,vector<char>(9));
 
-    
-
-
-}
+class Solution {
+    vector<string> mps = {"abc", "def", "ghi", "jkl" ,"mno","pqrs", "tuv", "wxyz"};
+    vector<string> ans;
+    void solve(int i, string digits, string temp){
+        if (i == digits.length()) {
+            ans.push_back(temp);
+            return;
+        }
+        int no = digits[i]-'2';
+        for (int j = 0; j < mps[no].size(); j++)
+        solve(i+1,digits, temp+ mps[no][j]);
+        
+    }
+        
+        
+public:
+    vector<string> letterCombinations(string digits) {
+        solve(0, digits, "");
+        return ans;
+    }
+};
 #define ll long long
 int  main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+    cout.tie(nullptr);
     
-    int n; cin >> n;
+    // int n; cin >> n;
 
-    vector<int> v;
+    vector<int>   cookies = {8,15,10};
+    int k = 2, mid  = 8;
+    Solution s;
+    // cout << s.solve(cookies, k, mid) << endl;
 
-    for (int i = 1; i <= n; i++){
-        int a1; cin >> a1;
-        int temp = (a1+m-1)/m;
-
-        if (temp > maxi ){
-            v.clear();
-            v.push_back({i, a1});
-            maxi = temp;
-        }
-        else if (temp == maxi) v.push_back({i, a1});
-    }
-
-    for (int i = 0; i < n/3;)
-
-    cout << v[v.size() - 1].first;
+    // vector<int> v;
 
 }
-
 
 

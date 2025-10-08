@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.dbclient-js": "javascript",
         "ostream": "cpp",
         "any": "cpp",
         "array": "cpp",
@@ -85,7 +86,12 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "stacktrace": "cpp",
+        "expected": "cpp",
+        "format": "cpp",
+        "spanstream": "cpp",
+        "stdfloat": "cpp"
     },
     "cSpell.words": [
         "alearnative"
