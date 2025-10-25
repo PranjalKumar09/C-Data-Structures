@@ -176,7 +176,7 @@ int maxValue(int n, int index, int maxSum) {
                          + max(0LL, index - mid + 1);
 
         ll right_count = min((ll)n - index - 1, mid - 1);
-        ll right_sum   = getSumElements(right_count, mid) 
+        ll right_sum   = get1Elements(right_count, mid) 
                          + max(0LL, (ll)n - index - 1 - mid + 1);
 
         if (left_sum + right_sum + mid <= maxSum) {

@@ -1,25 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Solution {
-    vector<string> mps = {"abc", "def", "ghi", "jkl" ,"mno","pqrs", "tuv", "wxyz"};
-    vector<string> ans;
-    void solve(int i, string digits, string temp){
-        if (i == digits.length()) {
-            ans.push_back(temp);
-            return;
-        }
-        int no = digits[i]-'2';
-        for (int j = 0; j < mps[no].size(); j++)
-        solve(i+1,digits, temp+ mps[no][j]);
-        
-    }
-        
-        
 public:
-    vector<string> letterCombinations(string digits) {
-        solve(0, digits, "");
-        return ans;
+    int maximum69Number (int num) {
+        string str = to_string(num);
+
+        for (auto &it: str)
+            if (it == '6'){
+                it = '9';
+                break;
+            }
+        return stoi(str);
     }
 };
 #define ll long long
@@ -38,5 +29,4 @@ int  main(){
     // vector<int> v;
 
 }
-
 
