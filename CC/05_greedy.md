@@ -1,3 +1,5 @@
+Greedy Notes
+    In interview , if cant think of , simply do brute force
 948. Bag of Tokens
     We have to maximize the score
     
@@ -191,3 +193,37 @@ this problem tells thzat, we shouldnt modify idrectly in unordered_map, while it
         convert to string, then proceed
     apporach 2
         we are adding 3, or 30, or 300,, like this, , we will do this upto end
+
+
+134. Gas Station
+
+2366. Minimum Replacements to Sort the Array 
+
+    Core of this forumula , apply
+long long parts = (nums[i] + nums[i + 1] - 1) / nums[i + 1];
+
+1326. Minimum Number of Taps to Open to Water a Garden
+
+
+class Solution {
+public:
+    int minDeletions(string s) {
+        int freq[26] = {0};
+        for (char &ch: s) freq[ch-'a']++;
+
+        int res = 0;
+        unordered_set<int> st;
+
+        for (int i = 0; i< 26; i++){
+            while(freq[i] && st.find(freq[i]) != st.end()){
+                freq[i] -= 1;
+                res++;
+            }
+            st.insert(freq[i]);
+        }
+        return res;
+    }
+};
+
+
+
