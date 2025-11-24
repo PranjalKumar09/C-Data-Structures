@@ -1,45 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+
 class Solution {
-public:
-    int shortestPath(int V, int a, int b, vector<vector<int>> &edges) {
-        vector<vector<pair<int,pair<int,int>>>> g(V);
-        for(auto &e:edges){
-            g[e[0]].push_back({e[1],{e[2],e[3]}});
-            g[e[1]].push_back({e[0],{e[2],e[3]}});
-        }
-        vector<vector<int>> d(V,vector<int>(2,1e9));
-        priority_queue<array<int,3>,vector<array<int,3>>,greater<>> pq;
-        d[a][0]=0;
-
-        /*  d[u][c] = shortest distance to node u
-
-c = 0: haven't used curved edge yet
-
-c = 1: already used one curved edge
-
-
-d[a][0] = 0;  // Start at node 'a' with 0 curved edges used
-pq.push({0, a, 0});  // {distance, node, curved_used}
-
-*/
-        pq.push({0,a,0});
-        while(!pq.empty()){
-            auto[dist,u,c]=pq.top();pq.pop();
-            if(dist>d[u][c])continue;
-            for(auto[v,w]:g[u]){
-                if(d[v][c]>dist+w.first){
-                    d[v][c]=dist+w.first;
-                    pq.push({d[v][c],v,c});
-                }
-                if(!c&&d[v][1]>dist+w.second){
-                    d[v][1]=dist+w.second;
-                    pq.push({d[v][1],v,1});
-                }
+    bool freq[26] = {0};
+    int n;
+    int solve(int idx, vector<string>& arr){
+        if (idx == n-1){
+            bool flag = true;
+            for (auto &it: arr[idx])
+            if (freq[it-'a'])  {
+                flag = false;
+                break;
             }
+            if (flag) return arr[idx].size();
+            return 0;
         }
-        int res=min(d[b][0],d[b][1]);
-        return res>=1e9?-1:res;
+        
+        int ans = INT_MIN;
+        
+        bool flag = true;
+        for (auto &it: arr[idx])
+        if (freq[it-'a'])  {
+            flag = false;
+            break;
+        }
+
+        if (flag){
+            for (auto &it: arr[idx])
+                freq[it-'a'] = true;
+            ans = solve(idx+1, arr);
+
+             for (auto &it: arr[idx])
+                freq[it-'a'] = false;
+
+        }
+        ans = max(solve(idx+1, arr), ans);
+
+        return ans;
+    }
+
+public:
+    int maxLength(vector<string>& arr) {
+        int n = arr.size();
+
+        return solve(0, arr);
+        
     }
 };
 #define ll long long
